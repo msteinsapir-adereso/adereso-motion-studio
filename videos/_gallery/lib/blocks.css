@@ -1,0 +1,72 @@
+/* blocks.css: styles for TH.blocks (blocks.js). Everything reads the brand tokens in th.css (:root). */
+
+/* shared */
+.b-card { position: absolute; background: linear-gradient(#232427, #161719); border: 1px solid var(--line); border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45); color: var(--text); box-sizing: border-box; opacity: 0; }
+.b-ico { width: 52px; height: 52px; border-radius: 14px; background: #2a2b2f; display: grid; place-items: center; flex: none; color: #fff; }
+.b-avatar { width: 64px; height: 64px; border-radius: 50%; background: #2a2b2f; display: grid; place-items: center; flex: none; color: #fff; }
+.b-center { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; }
+
+/* big type: light connecting words, heavy key words, accent highlight */
+.b-big { position: absolute; letter-spacing: -.05em; line-height: 1; color: var(--text); }
+.b-big .l { display: flex; flex-wrap: wrap; align-items: center; column-gap: .2em; }
+.b-big .l + .l { margin-top: .08em; }
+.b-big .lt { font-weight: 300; } .b-big .bd { font-weight: 600; } .b-big .hl { color: var(--accent); font-weight: 600; }
+.b-big.center .l { justify-content: center; text-align: center; }
+.b-mark { border-radius: 50%; display: grid; place-items: center; opacity: 0; flex: none; margin-left: .12em; }
+.b-mark.check { background: var(--accent); color: var(--on-accent); }
+.b-mark.cross { background: var(--danger); color: #fff; }
+
+/* tag and pill */
+.b-tag { position: absolute; padding: 12px 26px 15px; border-radius: 999px; background: rgba(12, 12, 13, .88);
+  border: 1px solid rgba(255, 255, 255, .14); font-size: 38px; font-weight: 500; letter-spacing: -.01em; color: var(--text); opacity: 0; white-space: nowrap; }
+.b-pill { display: flex; align-items: center; gap: 16px; font-weight: 600; letter-spacing: -.02em; padding: 14px 34px 17px 28px;
+  border-radius: 999px; opacity: 0; white-space: nowrap; }
+.b-pill i { width: 16px; height: 16px; border-radius: 50%; background: currentColor; display: block; }
+.b-pill.accent { background: var(--accent); color: var(--on-accent); }
+.b-pill.danger { background: var(--danger); color: #fff; }
+.b-pill.success { background: var(--success); color: #06270f; }
+.b-pill.ink { background: var(--bg); color: var(--text); border: 1px solid rgba(255, 255, 255, .16); }
+
+/* chat */
+.b-chat { padding: 24px 28px 26px; }
+.b-chat .hd { display: flex; align-items: center; gap: 18px; }
+.b-chat .hd b { display: block; font-size: 34px; font-weight: 600; letter-spacing: -.02em; }
+.b-chat .hd small { display: block; font-size: 26px; color: var(--muted); margin-top: 2px; }
+.b-chat .badge { margin-left: auto; display: flex; align-items: center; gap: 8px; font-size: 26px; font-weight: 600;
+  padding: 9px 18px 10px 12px; border-radius: 999px; opacity: 0; background: var(--wa); color: #06270f; }
+.b-chat .bub { margin-top: 16px; font-size: 34px; line-height: 1.28; padding: 14px 22px 16px; border-radius: 24px; width: fit-content;
+  max-width: 640px; opacity: 0; }
+.b-chat .bub.user { margin-left: auto; background: #1f3b2b; border-bottom-right-radius: 8px; }
+.b-chat .bub.bot { background: #2a2b2f; border-bottom-left-radius: 8px; }
+.b-chat .dots { position: absolute; left: 28px; display: flex; gap: 9px; padding: 22px 24px; border-radius: 24px; border-bottom-left-radius: 8px;
+  background: #2a2b2f; opacity: 0; }
+.b-chat .dots i { width: 13px; height: 13px; border-radius: 50%; background: rgba(255, 255, 255, .6); display: block; }
+
+/* diagram: hub → chips, each link breaks or holds */
+.b-hub { display: flex; align-items: center; gap: 24px; padding: 0 30px; height: 140px; min-width: 600px; box-sizing: border-box; }
+.b-hub .b-avatar { width: 80px; height: 80px; }
+.b-hub b { font-size: 46px; font-weight: 600; letter-spacing: -.02em; white-space: nowrap; }
+.b-chip { height: 150px; display: flex; flex-direction: column; justify-content: center; gap: 12px; padding: 0 28px;
+  font-size: 44px; font-weight: 500; letter-spacing: -.02em; }
+.b-wires { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; pointer-events: none; }
+.b-wires path { fill: none; stroke: rgba(255, 255, 255, .6); stroke-width: 4; stroke-linecap: round; }
+.b-node-mark { position: absolute; width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; opacity: 0;
+  box-shadow: 0 0 0 9px var(--bg); color: #fff; }
+.b-node-mark.break { background: var(--danger); } .b-node-mark.ok { background: var(--success); color: #06270f; }
+
+/* stat card: opens from its centre line, number counts up onto the spoken number */
+.b-stat { display: flex; flex-direction: column; justify-content: center; padding: 44px 56px 48px; overflow: hidden; }
+.b-stat .num { font-size: 160px; font-weight: 600; letter-spacing: -.06em; line-height: .95; color: var(--accent); font-variant-numeric: tabular-nums; }
+.b-stat .lab { font-size: 40px; font-weight: 400; color: var(--text); margin-top: 10px; letter-spacing: -.01em; }
+.b-stat .sub { font-size: 30px; color: var(--muted); margin-top: 8px; }
+
+/* end card */
+.b-end-logo { position: absolute; left: 0; width: 1080px; display: flex; justify-content: center; }
+.b-end-logo img { display: block; opacity: 0; }
+.b-end-url { font-size: 38px; color: var(--muted); letter-spacing: -.01em; opacity: 0; }
+
+/* behind the speaker (source coordinates, inside #behind) */
+.b-scrim { position: absolute; border-radius: 50%; background: radial-gradient(closest-side, rgba(12, 12, 13, .72), rgba(12, 12, 13, 0)); opacity: 0; }
+.b-behind { position: absolute; opacity: 0; }
+.b-behind.text { font-weight: 600; letter-spacing: -.05em; line-height: 1; color: #fff; white-space: nowrap; }

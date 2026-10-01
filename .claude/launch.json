@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "adereso-c0015-blocks",
+      "runtimeExecutable": "npx",
+      "runtimeArgs": ["--yes", "hyperframes@0.8.98", "preview", "videos/adereso-c0015-blocks", "--port", "3002", "--foreground", "--no-open"],
+      "port": 3002
+    }
+  ]
+}

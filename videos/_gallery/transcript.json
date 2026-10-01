@@ -1,0 +1,350 @@
+[
+  {
+    "text": "Muchos",
+    "start": 0.02,
+    "end": 0.31,
+    "id": "w0"
+  },
+  {
+    "text": "de",
+    "start": 0.31,
+    "end": 0.41,
+    "id": "w1"
+  },
+  {
+    "text": "los",
+    "start": 0.41,
+    "end": 0.57,
+    "id": "w2"
+  },
+  {
+    "text": "e-commerce",
+    "start": 0.57,
+    "end": 1.1,
+    "id": "w3"
+  },
+  {
+    "text": "con",
+    "start": 1.1,
+    "end": 1.22,
+    "id": "w4"
+  },
+  {
+    "text": "los",
+    "start": 1.26,
+    "end": 1.42,
+    "id": "w5"
+  },
+  {
+    "text": "que",
+    "start": 1.42,
+    "end": 1.58,
+    "id": "w6"
+  },
+  {
+    "text": "trabajamos",
+    "start": 1.58,
+    "end": 2.11,
+    "id": "w7"
+  },
+  {
+    "text": "hoy",
+    "start": 2.11,
+    "end": 2.22,
+    "id": "w8"
+  },
+  {
+    "text": "llegaron",
+    "start": 2.33,
+    "end": 2.84,
+    "id": "w9"
+  },
+  {
+    "text": "a",
+    "start": 2.84,
+    "end": 2.9,
+    "id": "w10"
+  },
+  {
+    "text": "Ereso",
+    "start": 2.9,
+    "end": 3.23,
+    "id": "w11"
+  },
+  {
+    "text": "después",
+    "start": 3.24,
+    "end": 3.64,
+    "id": "w12"
+  },
+  {
+    "text": "de",
+    "start": 3.64,
+    "end": 3.71,
+    "id": "w13"
+  },
+  {
+    "text": "haber",
+    "start": 3.82,
+    "end": 3.98,
+    "id": "w14"
+  },
+  {
+    "text": "probado",
+    "start": 4.07,
+    "end": 4.43,
+    "id": "w15"
+  },
+  {
+    "text": "otro",
+    "start": 4.58,
+    "end": 4.75,
+    "id": "w16"
+  },
+  {
+    "text": "proveedor",
+    "start": 4.75,
+    "end": 5.16,
+    "id": "w17"
+  },
+  {
+    "text": "de",
+    "start": 5.19,
+    "end": 5.27,
+    "id": "w18"
+  },
+  {
+    "text": "agentes",
+    "start": 5.27,
+    "end": 5.6,
+    "id": "w19"
+  },
+  {
+    "text": "de",
+    "start": 5.6,
+    "end": 5.69,
+    "id": "w20"
+  },
+  {
+    "text": "IA",
+    "start": 5.69,
+    "end": 5.77,
+    "id": "w21"
+  },
+  {
+    "text": "para",
+    "start": 5.78,
+    "end": 5.96,
+    "id": "w22"
+  },
+  {
+    "text": "WhatsApp.",
+    "start": 5.96,
+    "end": 6.56,
+    "id": "w23"
+  },
+  {
+    "text": "A",
+    "start": 6.56,
+    "end": 6.61,
+    "id": "w24"
+  },
+  {
+    "text": "muchos",
+    "start": 6.61,
+    "end": 6.95,
+    "id": "w25"
+  },
+  {
+    "text": "les",
+    "start": 6.95,
+    "end": 7.12,
+    "id": "w26"
+  },
+  {
+    "text": "prometieron",
+    "start": 7.12,
+    "end": 7.71,
+    "id": "w27"
+  },
+  {
+    "text": "una",
+    "start": 7.76,
+    "end": 7.87,
+    "id": "w28"
+  },
+  {
+    "text": "IA",
+    "start": 7.96,
+    "end": 8.01,
+    "id": "w29"
+  },
+  {
+    "text": "que",
+    "start": 8.09,
+    "end": 8.18,
+    "id": "w30"
+  },
+  {
+    "text": "iba",
+    "start": 8.18,
+    "end": 8.27,
+    "id": "w31"
+  },
+  {
+    "text": "a",
+    "start": 8.38,
+    "end": 8.44,
+    "id": "w32"
+  },
+  {
+    "text": "resolver",
+    "start": 8.46,
+    "end": 8.95,
+    "id": "w33"
+  },
+  {
+    "text": "todo",
+    "start": 8.95,
+    "end": 9.2,
+    "id": "w34"
+  },
+  {
+    "text": "y",
+    "start": 9.2,
+    "end": 9.26,
+    "id": "w35"
+  },
+  {
+    "text": "iba",
+    "start": 9.26,
+    "end": 9.45,
+    "id": "w36"
+  },
+  {
+    "text": "a",
+    "start": 9.45,
+    "end": 9.51,
+    "id": "w37"
+  },
+  {
+    "text": "ayudarlos",
+    "start": 9.51,
+    "end": 10.08,
+    "id": "w38"
+  },
+  {
+    "text": "a",
+    "start": 10.08,
+    "end": 10.14,
+    "id": "w39"
+  },
+  {
+    "text": "vender",
+    "start": 10.14,
+    "end": 10.52,
+    "id": "w40"
+  },
+  {
+    "text": "mucho",
+    "start": 10.52,
+    "end": 10.84,
+    "id": "w41"
+  },
+  {
+    "text": "más.",
+    "start": 10.84,
+    "end": 11.36,
+    "id": "w42"
+  },
+  {
+    "text": "Pero",
+    "start": 11.36,
+    "end": 11.53,
+    "id": "w43"
+  },
+  {
+    "text": "no",
+    "start": 11.53,
+    "end": 11.59,
+    "id": "w44"
+  },
+  {
+    "text": "estaba",
+    "start": 11.64,
+    "end": 11.76,
+    "id": "w45"
+  },
+  {
+    "text": "conectado",
+    "start": 11.97,
+    "end": 12.15,
+    "id": "w46"
+  },
+  {
+    "text": "al",
+    "start": 12.26,
+    "end": 12.36,
+    "id": "w47"
+  },
+  {
+    "text": "stock,",
+    "start": 12.36,
+    "end": 13.11,
+    "id": "w48"
+  },
+  {
+    "text": "los",
+    "start": 13.14,
+    "end": 13.31,
+    "id": "w49"
+  },
+  {
+    "text": "precios",
+    "start": 13.31,
+    "end": 13.76,
+    "id": "w50"
+  },
+  {
+    "text": "ni",
+    "start": 13.76,
+    "end": 13.89,
+    "id": "w51"
+  },
+  {
+    "text": "a",
+    "start": 13.89,
+    "end": 13.95,
+    "id": "w52"
+  },
+  {
+    "text": "los",
+    "start": 13.95,
+    "end": 14.14,
+    "id": "w53"
+  },
+  {
+    "text": "pedidos",
+    "start": 14.14,
+    "end": 14.59,
+    "id": "w54"
+  },
+  {
+    "text": "de",
+    "start": 14.59,
+    "end": 14.72,
+    "id": "w55"
+  },
+  {
+    "text": "su",
+    "start": 14.72,
+    "end": 14.85,
+    "id": "w56"
+  },
+  {
+    "text": "tienda.",
+    "start": 14.85,
+    "end": 15.32,
+    "id": "w57"
+  }
+]

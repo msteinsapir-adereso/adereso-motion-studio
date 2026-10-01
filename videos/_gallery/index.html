@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>@font-face { font-family: 'Outfit'; src: url('assets/fonts/Outfit-Variable-latin.woff2') format('woff2'); font-weight: 300 700; }</style>
+<link rel="stylesheet" href="lib/th.css">
+<link rel="stylesheet" href="lib/blocks.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+</head><body>
+<!-- Blocks gallery: exercises the blocks the Adereso test didn't use. Sample content only, not for publishing. -->
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-duration="12">
+  <div id="stage-bg" class="layer"></div>
+  <div id="under" class="layer"></div>
+  <div id="card-shadow"></div>
+  <div id="cam" class="layer">
+    <div id="cam-inner" class="layer">
+      <video id="plate" class="clip" src="assets/C0015.mp4" data-start="0" data-duration="12" muted playsinline></video>
+      <div id="behind" class="layer"></div>
+      <video id="cutout-text" class="clip" src="assets/cutout-text.webm" data-start="2.9029" data-duration="1.5015" muted playsinline></video>
+    </div>
+  </div>
+  <div id="card-frame"></div>
+  <div id="over" class="layer"></div>
+  <div id="veil" class="layer"></div>
+  <div id="kws" class="layer"></div>
+  <div id="caps" class="layer"></div>
+  <audio id="mix" src="assets/mix.wav" data-start="0" data-duration="12"></audio>
+</div>
+<script src="words.js"></script>
+<script src="lib/th.js"></script>
+<script src="lib/blocks.js"></script>
+<script>
+const PLAN = {
+  duration: 12,
+  focus: [530, 628],
+  captions: { keywords: ['e-commerce', 'Adereso'], hide: [[4.45, 12]] },
+  camera: [
+    { t: 0.3, d: 0.6, s: 1.1, y: -130, ease: 'power3.inOut', cue: 'whoosh' },   // lift for the stat card
+    { t: 2.75, d: 0.45, s: 1.0, y: 0, ease: 'power3.inOut' },                   // back to the plain shot
+  ],
+  cards: [{ t: 4.5, d: 0.9, ease: 'pip', rect: [280, 290, 520, 650], crop: [270, 410, 520, 650], crop2: [300, 445, 460, 575], r: 30 }],
+  keywords: [{ word: 0, text: 'Con Adereso', at: [540, 900], t: 7.15, until: 7.45, out: 'fly' }],
+};
+
+document.fonts.ready.then(() => {
+  const th = TH.create(PLAN, WORDS), B = TH.blocks;
+
+  // stat: opens from its centre line, counts up and lands on its word
+  B.stat(th, { y: 790, h: 300, value: 38, prefix: '+', suffix: '%', label: 'Dato de ejemplo', sub: 'Reemplazar por un número verificado',
+               in: 0.62, land: 1.5, count: 0.7, out: 2.6 });
+
+  // behind the speaker, text variant (cutout window 2.90–4.40)
+  B.behind(th, { text: 'WhatsApp', size: 204, x: 80, y: 346, w: 900, h: 204, in: 3.1, out: 4.1 });   // ~900 px wide, baseline ~0.35 cap below the head top
+
+  // speaker card, a tag, and a phrase that ends in a cross
+  B.tag(th, { x: 304, y: 896, text: 'Tag de ejemplo', in: 5.0 });
+  B.phrase(th, { parent: '#under', x: 280, w: 735, y: 1010, lines: ['Respuestas{=5.4}', 'sin{=5.75} ^datos{=6.05}'], mark: { type: 'cross', t: 6.4 } });   // shares the card's left edge
+
+  // keyword fly-through into a scene: everything connected
+  const sc = B.scene(th, { id: 'ok', in: 7.45, veil: true });   // the end card covers it; no fade to the layers below
+  B.headline(th, { parent: sc, x: 105, y: 318, lines: ['*Todo{=7.8} _conectado{=8.02}'] });   // after the pill has cleared; shares the chips' left edge
+  B.diagram(th, { parent: sc, hub: { text: 'Agente Adereso', in: 7.95 },
+    chips: [{ text: 'Stock', icon: 'box', t: 8.25, state: 'ok' }, { text: 'Precios', icon: 'tag', t: 8.6, state: 'ok' }, { text: 'Pedidos', icon: 'bag', t: 8.95, state: 'ok' }],
+    verdict: { text: 'Conectado a tu tienda', t: 9.35, tone: 'success' } });
+
+  // end card
+  B.endcard(th, { in: 10.0, cta: 'Hablar con un experto', url: 'adereso.ai' });
+
+  th.finish();
+  window.__timelines['root'] = th.tl;
+  if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+});
+</script>
+</body></html>

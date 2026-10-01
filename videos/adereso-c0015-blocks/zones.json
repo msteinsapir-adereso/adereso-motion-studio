@@ -1,0 +1,65 @@
+{
+ "size": [
+  1080,
+  1920
+ ],
+ "samples_s": [
+  1.28,
+  3.84,
+  6.4,
+  8.95,
+  11.51,
+  14.07
+ ],
+ "head_keepout": [
+  278,
+  394,
+  781,
+  862
+ ],
+ "head_raw": [
+  343,
+  459,
+  717,
+  798
+ ],
+ "person": [
+  0,
+  459,
+  978,
+  1919
+ ],
+ "safe_area": [
+  65,
+  269,
+  1015,
+  1248
+ ],
+ "free": {
+  "headroom": [
+   65,
+   269,
+   1015,
+   394
+  ],
+  "left_of_head": [
+   65,
+   269,
+   278,
+   862
+  ],
+  "right_of_head": [
+   781,
+   269,
+   1015,
+   862
+  ],
+  "below_head": [
+   65,
+   862,
+   1015,
+   1248
+  ]
+ },
+ "note": "boxes are [x0, y0, x1, y1] in pixels; head_keepout has a 6% margin; safe_area follows Meta Reels ads guidance"
+}

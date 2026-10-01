@@ -1,0 +1,43 @@
+/* Talking-head engine styles. Brand tokens are CSS variables so each video can override them. */
+:root {
+  --bg: #0C0C0D; --surface: #141414; --line: rgba(255, 255, 255, .08); --text: #fff; --muted: rgba(255, 255, 255, .55);
+  --accent: #FFD540; --on-accent: #0C0C0D; --success: #52CE5E; --wa: #25D366; --danger: #FF6B5E;
+  --cap-size: 48px; --kw-size: 104px;
+}
+html, body { margin: 0; background: var(--bg); }
+#root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg);
+  font-family: 'Outfit', sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+.layer { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+#stage-bg { background: radial-gradient(120% 70% at 50% 35%, #1b1c1f 0%, var(--bg) 70%); }
+#cam { transform-origin: 0 0; will-change: transform; z-index: 2; }
+#cam-inner { overflow: hidden; }
+#plate, #cutout { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; object-fit: cover; }
+#card-shadow { z-index: 1; border-radius: 28px; box-shadow: 0 30px 80px rgba(0, 0, 0, .55); opacity: 0; }
+#card-frame { z-index: 3; border-radius: 28px; border: 2px solid rgba(255, 255, 255, .14); opacity: 0; box-sizing: border-box; }
+#card-shadow, #card-frame { position: absolute; left: 0; top: 0; width: 100px; height: 100px; transform-origin: 0 0; }
+#under { z-index: 1; } #over { z-index: 4; } #veil { z-index: 5; } #kws { z-index: 6; } #caps { z-index: 7; }
+#under, #over, #veil, #kws, #caps { pointer-events: none; }
+#veil { background: rgba(12, 12, 13, .62); backdrop-filter: blur(14px); opacity: 0; }
+
+/* small captions: a dark backing, because real footage behind them is often busy */
+.cap { position: absolute; left: 0; top: 0; display: flex; gap: .26em; white-space: nowrap; padding: 14px 28px 16px;
+  border-radius: 24px; background: rgba(12, 12, 13, .8); font-size: var(--cap-size); font-weight: 500;
+  letter-spacing: -.02em; line-height: 1.1; opacity: 0; will-change: transform, opacity; }
+.cap .w { display: inline-block; }
+
+/* big keywords */
+.kw { position: absolute; left: 0; top: 0; white-space: nowrap; font-weight: 600; font-size: var(--kw-size);
+  letter-spacing: -.045em; line-height: 1; opacity: 0; will-change: transform, opacity, filter; }
+.kw.pill { background: var(--accent); color: var(--on-accent); padding: 22px 50px 28px; border-radius: 999px; }
+.kw.ink { background: var(--bg); color: var(--text); padding: 22px 50px 28px; border-radius: 999px; }
+.kw.type { color: var(--text); text-shadow: 0 6px 30px rgba(0, 0, 0, .45); }
+
+/* scene and overlay building blocks */
+.scene { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; opacity: 0; }
+.scene.solid { background: radial-gradient(120% 70% at 50% 35%, #1b1c1f 0%, var(--bg) 70%); }
+.card { position: absolute; background: linear-gradient(#232427, #161719); border: 1px solid var(--line); border-radius: 26px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .45); color: var(--text); box-sizing: border-box; opacity: 0; }
+
+/* big type that builds word by word: each word rises out of its own mask */
+.tw { display: inline-block; overflow: hidden; vertical-align: top; padding: 0 .02em .1em; margin-bottom: -.1em; }
+.tw > span { display: inline-block; will-change: transform; }

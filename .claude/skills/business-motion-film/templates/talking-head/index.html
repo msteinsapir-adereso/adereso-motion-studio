@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<style>@font-face { font-family: 'Outfit'; src: url('assets/fonts/Outfit-Variable-latin.woff2') format('woff2'); font-weight: 300 700; }</style>
+<link rel="stylesheet" href="lib/th.css">
+<link rel="stylesheet" href="lib/blocks.css">
+<script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+</head><body>
+<div id="root" data-composition-id="root" data-width="1080" data-height="1920" data-duration="15.35">
+  <div id="stage-bg" class="layer"></div>
+  <div id="under" class="layer"></div>
+  <div id="card-shadow"></div>
+  <div id="cam" class="layer">
+    <div id="cam-inner" class="layer">
+      <video id="plate" class="clip" src="assets/C0015.mp4" data-start="0" data-duration="15.35" muted playsinline></video>
+      <div id="behind" class="layer"></div>
+      <video id="cutout" class="clip" src="assets/cutout-behind.webm" data-start="2.6026" data-duration="1.5015" muted playsinline></video>
+    </div>
+  </div>
+  <div id="card-frame"></div>
+  <div id="over" class="layer"></div>
+  <div id="veil" class="layer"></div>
+  <div id="kws" class="layer"></div>
+  <div id="caps" class="layer"></div>
+  <audio id="mix" src="assets/mix.wav" data-start="0" data-duration="15.35"></audio>
+</div>
+<script src="words.js"></script>
+<script src="lib/th.js"></script>
+<script src="lib/blocks.js"></script>
+<script>
+// Word indices come from words.js. Zones (focus, safe area) from zones.json.
+const LIFT = { s: 1.1, y: -130 };
+const PLAN = {
+  duration: 15.35,
+  focus: [530, 628],
+  captions: { keywords: ['e-commerce', 'Adereso', 'WhatsApp'], hide: [[0.52, 1.12], [6.5, 15.35]] },
+  camera: [
+    { t: 0, d: 2.26, s: 1.05 },                                                    // slow push
+    { t: 2.26, d: 0.23, s: 1.16, ease: 'power2.inOut' },                           // 7-frame snap onto "llegaron"
+    { t: 3.82, d: 0.62, s: LIFT.s, y: LIFT.y, ease: 'power3.inOut', cue: 'whoosh' },  // lift: room under the chin
+  ],
+  cards: [{ t: 6.52, d: 0.9, ease: 'pip', rect: [280, 290, 520, 650], crop: [270, 410, 520, 650], crop2: [300, 445, 460, 575], push2: 11.4, r: 30 }],
+  keywords: [
+    { word: 3, text: 'e-commerce', at: [540, 985], hold: 0.55 },
+    { word: 43, text: 'Pero', at: [540, 900], t: 11.3, until: 11.5, out: 'fly' },
+  ],
+};
+
+document.fonts.ready.then(() => {
+  const th = TH.create(PLAN, WORDS), B = TH.blocks;
+
+  // behind the speaker: the logo rises from behind his head on "Adereso" (cutout window 2.60–4.10)
+  B.behind(th, { src: 'assets/logo.png', x: 247, y: 404, w: 566, h: 113, in: { w: 11, d: -0.04 }, out: 3.72 });
+
+  // overlay under the lifted speaker
+  B.chat(th, { title: 'Otro proveedor', sub: 'Agente de IA', badge: { text: 'WhatsApp', t: 5.93 }, in: 3.9, out: 6.26,
+    messages: [{ from: 'user', text: '¿Tienen la talla M en negro?', t: 4.25 },
+               { from: 'bot', text: '¡Hola! ¿En qué te puedo ayudar?', t: 4.95, typing: 0.35 }] });
+
+  // speaker card: a tag on the card, the promises build below it; the second pushes the first out
+  B.tag(th, { x: 304, y: 896, text: 'Les prometieron', in: 6.93 });
+  B.phrase(th, { parent: '#under', x: 280, w: 735, y: 1010, lines: ['Una{28} IA{29} que{30}', 'resuelve{33} ^todo{34}'], mark: { t: 9.02 }, out: 9.9 });
+  B.phrase(th, { parent: '#under', x: 280, w: 735, y: 1010, lines: ['Vender{40}', 'mucho{41} ^más{42}'], mark: { t: 10.9 } });   // phrases share the card's left edge
+  th.tl.fromTo('#under', { y: 0 }, { y: -48, duration: 4.6, ease: 'none', immediateRender: false }, 6.7);   // keep the held scene moving
+
+  // "Pero" flies through into the cutaway: nothing is connected
+  const cut = B.scene(th, { id: 'cut', in: 11.5, veil: true });
+  B.headline(th, { parent: cut, x: 105, y: 318, lines: ['*No{=11.78} _estaba{=11.86}', '*conectado{46} _a:{47}']   /* first words land as the fly-through clears */ });
+  B.diagram(th, { parent: cut, hub: { text: 'Agente de IA', in: 11.95 },
+    chips: [{ text: 'Stock', icon: 'box', t: { word: 'stock' } }, { text: 'Precios', icon: 'tag', t: { word: 'precios' } }, { text: 'Pedidos', icon: 'bag', t: { word: 'pedidos' } }],
+    verdict: { text: 'Sin conexión a tu tienda', t: 14.64 } });
+
+  th.finish();
+  window.__timelines['root'] = th.tl;
+  if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+});
+</script>
+</body></html>

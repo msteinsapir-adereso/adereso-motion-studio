@@ -1,0 +1,35 @@
+# generated per video
+videos/*/renders/
+videos/*/shots*/
+videos/*/review/
+videos/*/.hyperframes/
+videos/*/.thumbnails/
+videos/*/still-*.png
+
+# footage and generated media stay out of git (share through Drive)...
+videos/*/assets/*.mp4
+videos/*/assets/*.mov
+videos/*/assets/*.webm
+videos/*/assets/*.wav
+# ...except the two examples, so a fresh clone can render them to confirm the setup
+!videos/adereso-c0015-blocks/assets/*
+!videos/_gallery/assets/*
+
+# first hand-built version of the test (superseded by adereso-c0015-blocks)
+videos/adereso-c0015/
+
+# reference ads belong to their owners: only our notes are shared
+refs/*/ad.mp4
+refs/*/study/
+refs/*/transcript.json
+
+# upstream kit clone (see README: clone it here when updating) and an early demo
+motion-video-kit/
+lab-demo/
+
+# OS
+.DS_Store
+
+# sound-effect files: their licence doesn't allow redistributing them as-is.
+# th-prep.sh copies them from the HyperFrames package on each machine.
+videos/*/assets/sfx/*.mp3
