@@ -73,7 +73,7 @@ Rendering is ~45 s per 15 s of video on an M1. Close heavy apps on 8 GB machines
 
 ## Licenses
 
-- **Code, scripts, templates and docs:** MIT (`LICENSE`).
+- **Code, scripts, templates and docs:** MIT (`LICENSE`; scope in `NOTICE.md`).
 - **Not covered by MIT:** the Adereso name, logo and brand assets, and the example footage in `videos/` (© Adereso, included to demonstrate the system).
 - **Third-party material:** the original kit (MIT), the Outfit font (OFL) and the sound effects, which aren't redistributed here. See `THIRD_PARTY_NOTICES.md`.
 
